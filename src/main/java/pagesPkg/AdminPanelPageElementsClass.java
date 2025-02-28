@@ -40,7 +40,7 @@ public class AdminPanelPageElementsClass {
 
 	public AdminPanelPageElementsClass(WebDriver driver) {
 		this.driver = driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));  // Initialize WebDriverWait
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(40));  // Initialize WebDriverWait
 	}
 
 

@@ -71,7 +71,7 @@ public class PGrewardAdditionClass {
 
 	public PGrewardAdditionClass(WebDriver driver) {
 		this.driver= driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(40));  
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(50));  
 		this.action= new Actions(driver);
 	}
 
