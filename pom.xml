@@ -24,7 +24,7 @@
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
-        <version>4.4.0</version>  <!-- Choose the appropriate version -->
+        <version>4.11.0</version>  <!-- Choose the appropriate version -->
     </dependency>
 
 
@@ -46,14 +46,14 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>5.1.0</version>
+			<version>5.4.1</version>
 		</dependency>
 		
 		
 		        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-remote-driver</artifactId>
-            <version>4.4.0</version>
+            <version>4.11.0</version>
         </dependency>
 		
   </dependencies>
