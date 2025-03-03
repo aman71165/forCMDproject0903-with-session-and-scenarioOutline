@@ -7,12 +7,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+import utilPkg.ConfigReaderClass;
 
 
 public class BrowserSetupClass {
 	private  WebDriver driver;
 
+	ConfigReaderClass configRead= new ConfigReaderClass();
+	
 	public BrowserSetupClass(){
 	}
 
@@ -29,8 +31,8 @@ public class BrowserSetupClass {
 		driver.manage().window().maximize();
 		
 		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		
-		driver.get("https://goinfinity.beyond360test.com/Account/Login?ReturnUrl=/Survey/Index");
+		String url= configRead.getConfigProperty("urlAddress_fromProperties");
+		driver.get(url);
 		
 		Thread.sleep(500);
 		return driver;

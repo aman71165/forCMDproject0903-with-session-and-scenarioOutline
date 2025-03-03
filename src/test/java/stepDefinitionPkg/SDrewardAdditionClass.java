@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pagesPkg.AdminPanelPageElementsClass;
 import pagesPkg.PGrewardAdditionClass;
+import utilPkg.ConfigReaderClass;
 
 
 public class SDrewardAdditionClass {
@@ -18,6 +19,8 @@ public class SDrewardAdditionClass {
 	AdminPanelPageElementsClass loginClass;
 
 	BrowserSetupClass browser = new BrowserSetupClass();
+
+	ConfigReaderClass configRead= new ConfigReaderClass();
 
 	PGrewardAdditionClass rewardAdd;
 
@@ -29,21 +32,24 @@ public class SDrewardAdditionClass {
 
 		loginClass= new AdminPanelPageElementsClass(driver);
 
-		loginClass.enterUsername("aman71165@gmail.com");
-		loginClass.enterPassword("pass@12345");
+		String loginUsername= configRead.getConfigProperty("username_fromProperties");
+		String loginPassword= configRead.getConfigProperty("password_fromProperties");
+
+		loginClass.enterUsername(loginUsername);
+		loginClass.enterPassword(loginPassword);
 
 		String pageTitle = driver.getTitle();
-		
+
 		loginClass.clickLoginButton();
-		
+
 		loginClass.clickProfileImage();
 
 		loginClass.clickAdminPanelLink();
 		//Thread.sleep(500);
-		
+
 		loginClass.moveToAdminPanel();
 		//Thread.sleep(500);
-		
+
 	}
 
 	@When("user lands on Recognitions page and enable the toggle")
@@ -53,8 +59,7 @@ public class SDrewardAdditionClass {
 
 		rewardAdd.clickRecognitionTile();
 
-		Assert.assertTrue(driver.getTitle().contains("R"
-				+ "ecognitions"));
+		Assert.assertTrue(driver.getTitle().contains("Recognitions"));
 
 		rewardAdd.clickEnableEditToggle();
 		Thread.sleep(500);
@@ -98,14 +103,14 @@ public class SDrewardAdditionClass {
 
 	@Then("reward displayed on grid page after successful addition process")
 	public void reward_displayed_on_grid_page_after_successful_addition_process() throws InterruptedException {
-			//rewardAdd.clickFinishButton();
+		//rewardAdd.clickFinishButton();
 
 		rewardAdd.clickLogoutLink();
 		Thread.sleep(1000);
 		rewardAdd.clickAdminPanelYesButton();
 		Thread.sleep(500);
 		rewardAdd.clickPopupAlert();
-		
+
 		loginClass.moveToMainApp();
 		driver.navigate().refresh();
 		loginClass.clickProfileImage();
@@ -113,8 +118,8 @@ public class SDrewardAdditionClass {
 		loginClass.clickYesLogoutButton();
 		Thread.sleep(1000);
 		driver.quit();
-		
-	
+
+
 	}
 
 

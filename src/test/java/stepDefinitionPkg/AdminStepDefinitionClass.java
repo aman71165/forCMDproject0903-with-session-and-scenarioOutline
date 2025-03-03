@@ -43,8 +43,8 @@ public class AdminStepDefinitionClass {
 	@When("user enters the username {string} and password {string}")
 	public void user_enters_the_username_and_password(String uName, String pwd) {
 
-		 eleClass = new AdminPanelPageElementsClass(driver);
-		 
+		eleClass = new AdminPanelPageElementsClass(driver);
+
 		eleClass.enterUsername(uName);
 		eleClass.enterPassword(pwd);
 
@@ -53,35 +53,35 @@ public class AdminStepDefinitionClass {
 	@And("user clicks on login button")
 	public void user_clicks_on_login_button() {
 		eleClass.clickLoginButton();
-		
+
 	}
 
 	@Then("user clicks on AdminPanel link")
 	public void user_clicks_on_admin_panel_link() throws InterruptedException {
-		
-		
+
+
 		Thread.sleep(1500);
 		eleClass.clickProfileImage();
-		
+
 		Thread.sleep(500);
 		eleClass.clickAdminPanelLink();
-		
-		
+
+
 		Thread.sleep(500);
-		 
-		 String originalWindow= driver.getWindowHandle();
-		
-		 for(String windowHandle : driver.getWindowHandles()) {
-			 if(!windowHandle.equals(originalWindow)) {
-				 driver.switchTo().window(originalWindow);
-				 break;
-			 }
-				 }
-		 
-		 
+
+		String originalWindow= driver.getWindowHandle();
+
+		for(String windowHandle : driver.getWindowHandles()) {
+			if(!windowHandle.equals(originalWindow)) {
+				driver.switchTo().window(originalWindow);
+				break;
+			}
+		}
+
+
 		driver.navigate().refresh();
 		Thread.sleep(1500);
-		
+
 		eleClass.clickProfileImage();
 		Thread.sleep(500);
 
@@ -93,8 +93,8 @@ public class AdminStepDefinitionClass {
 		String pageTitle1= driver.getTitle();
 		System.out.println("user is now on the " + pageTitle1 + " after successful logout");
 		driver.quit();
-		
-		
+
+
 	}                                     
 
 
