@@ -21,6 +21,8 @@ public class BrowserSetupClass {
 
 		ChromeOptions options= new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
+		//options.addArguments("--headless");  
+		//options.addArguments("--disable-gpu"); 
 		
 		driver= new ChromeDriver(options);
 

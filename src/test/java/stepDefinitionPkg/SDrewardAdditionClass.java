@@ -3,11 +3,13 @@ package stepDefinitionPkg;
 import org.openqa.selenium.*;
 
 import browserSetupPkg.BrowserSetupClass;
+import org.junit.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pagesPkg.AdminPanelPageElementsClass;
 import pagesPkg.PGrewardAdditionClass;
+
 
 public class SDrewardAdditionClass {
 
@@ -30,7 +32,8 @@ public class SDrewardAdditionClass {
 		loginClass.enterUsername("aman71165@gmail.com");
 		loginClass.enterPassword("pass@12345");
 
-
+		String pageTitle = driver.getTitle();
+		
 		loginClass.clickLoginButton();
 		
 		loginClass.clickProfileImage();
@@ -49,6 +52,9 @@ public class SDrewardAdditionClass {
 		rewardAdd = new PGrewardAdditionClass(driver); 
 
 		rewardAdd.clickRecognitionTile();
+
+		Assert.assertTrue(driver.getTitle().contains("R"
+				+ "ecognitions"));
 
 		rewardAdd.clickEnableEditToggle();
 		Thread.sleep(500);
@@ -108,6 +114,7 @@ public class SDrewardAdditionClass {
 		Thread.sleep(1000);
 		driver.quit();
 		
+	
 	}
 
 

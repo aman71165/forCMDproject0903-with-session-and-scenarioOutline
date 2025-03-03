@@ -128,7 +128,7 @@ public class PGrewardAdditionClass {
 	public void clickStartDatePicker(){
 		driver.findElement(startDatePicker).click();
 
-		WebElement eleStartDate= driver.findElement(By.xpath("//a[@title='Friday, February 28, 2025']"));
+		WebElement eleStartDate= driver.findElement(By.xpath("//a[@title='Sunday, March 09, 2025']"));
 
 		js.executeScript("arguments[0].click();", eleStartDate);
 	}
@@ -137,7 +137,7 @@ public class PGrewardAdditionClass {
 	public void clickEndDatePicker(){
 		driver.findElement(endDatePicker).click();
 
-		WebElement eleEndDate= driver.findElement(By.xpath("//a[@title='Saturday, March 08, 2025']"));
+		WebElement eleEndDate= driver.findElement(By.xpath("//a[@title='Saturday, April 05, 2025']"));
 
 		js.executeScript("arguments[0].click();", eleEndDate);
 	}
