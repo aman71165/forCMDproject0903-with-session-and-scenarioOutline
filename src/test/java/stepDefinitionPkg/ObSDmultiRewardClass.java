@@ -35,7 +35,6 @@ public class ObSDmultiRewardClass {
 		HomeAdminPanel = new HometoAdminPanelClass(driver);	
 		recognitions = new RecognitionPageClass(driver);
 		multiReward= new MultipleRewardClass(driver);
-
 	}
 
 
@@ -184,11 +183,6 @@ public class ObSDmultiRewardClass {
 
 		driver.close();
 	}
-
-
-
-
-
 
 
 }

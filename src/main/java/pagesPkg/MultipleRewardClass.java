@@ -118,7 +118,7 @@ public class MultipleRewardClass {
 	public void clickStartDatePicker(){
 		driver.findElement(startDatePicker).click();
 
-		WebElement eleStartDate= driver.findElement(By.xpath("//a[@title='Sunday, March 09, 2025']"));
+		WebElement eleStartDate= driver.findElement(By.xpath("//a[@title='Friday, April 04, 2025']"));
 
 		js.executeScript("arguments[0].click();", eleStartDate);
 	}
