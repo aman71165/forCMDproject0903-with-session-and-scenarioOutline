@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions( 
-		features="src/test/resources/featureFiles/reward.feature",
+		features="src/test/resources/featureFiles/multiReward.feature",
 		glue= {"stepDefinitionPkg"}, 
 		//tags="@reward", 
 		plugin= {"pretty", "html:target/ html-reports/ reports.html"}

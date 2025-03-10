@@ -39,7 +39,7 @@
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>7.21.1</version>
-			<scope>test</scope> 
+			<scope>test</scope>
 		</dependency>
 		
     <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
@@ -55,6 +55,7 @@
             <artifactId>selenium-remote-driver</artifactId>
             <version>4.11.0</version>
         </dependency>
+	
 		
   </dependencies>
 

@@ -3,13 +3,14 @@ package stepDefinitionPkg;
 import org.openqa.selenium.*;
 
 import browserSetupPkg.BrowserSetupClass;
+import configlPkg.ConfigReaderClass;
+
 import org.junit.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pagesPkg.AdminPanelPageElementsClass;
 import pagesPkg.PGrewardAdditionClass;
-import utilPkg.ConfigReaderClass;
 
 
 public class SDrewardAdditionClass {

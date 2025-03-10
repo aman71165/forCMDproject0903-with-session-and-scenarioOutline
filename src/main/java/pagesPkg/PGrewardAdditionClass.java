@@ -60,22 +60,30 @@ public class PGrewardAdditionClass {
 	private By reviewButton = By.xpath("//button[contains(text(), 'Review')]");
 
 	private By finishButton = By.xpath("//button[contains(text(), 'Finish')]");
+	private By cancelButton = By.xpath("//button[@type='button' and contains(text(), 'Cancel')]");
+	private By cancelOKButton = By.xpath("//button[contains(text(), 'OK')]");
+	
 	
 	private By logOutlink = By.xpath("//a[@title='Logout']");
 	
 	private By adminPanelYesButton = By.xpath("//button[contains(text(), 'Yes')]");
 	
-	
+	private By uploadCertificateButton = By.xpath("//button[@title='Upload Recognition Certificate Watermark Image']");
 	
 
 
 	public PGrewardAdditionClass(WebDriver driver) {
 		this.driver= driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(50));  
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(55));  
 		this.action= new Actions(driver);
 	}
 
-
+	
+	
+	public String getPageTitle() {
+        return driver.getTitle();
+    }
+	
 	public void clickRecognitionTile() throws InterruptedException{
 
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@href='OrganizationStructure/Index']")));
@@ -91,6 +99,7 @@ public class PGrewardAdditionClass {
 
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loading-bar-spinner")));
 		eleEnableEditToggle.click();
+		
 	}
 
 	public void clickNewRecognitionButton(){
@@ -106,6 +115,11 @@ public class PGrewardAdditionClass {
 
 	public void clickRewardnameField(){
 		driver.findElement(rewardnameField).sendKeys("automationReward");
+	}
+	
+	public void clickRewardnameField_parameterized(String rewardName){
+		
+		driver.findElement(rewardnameField).sendKeys(rewardName);
 	}
 
 	public void clickDescriptionField(){
@@ -150,10 +164,15 @@ public class PGrewardAdditionClass {
 		js.executeScript("arguments[0].click();", eleOption);
 	}
 
+	
 	public void clickRewardPointsField(){
 		driver.findElement(rewardPointsField).sendKeys("5");
 	}
+	public void clickRewardPointsField_paramerized(String rewardPoints){
+		driver.findElement(rewardPointsField).sendKeys(rewardPoints);
+	}
 
+	
 	public void clickFirstNextbutton(){
 		driver.findElement(firstNextbutton).click();
 	}
@@ -208,6 +227,17 @@ public class PGrewardAdditionClass {
 		//driver.findElement(finishButton).click();
 	}
 
+	public void clickCancelButton(){
+		System.out.println("this is final page");
+		driver.findElement(cancelButton).click();
+	}
+
+	public void clickCancelOKButton(){
+		System.out.println("this is final page");
+		driver.findElement(cancelOKButton).click();
+	}
+
+	
 	public void clickLogoutLink(){
 			driver.findElement(logOutlink).click();
 	}
@@ -216,10 +246,16 @@ public class PGrewardAdditionClass {
 	public void clickAdminPanelYesButton(){
 		driver.findElement(adminPanelYesButton).click();
 }
+	public void waitForUploadCertificateButton(){
+		wait.until(ExpectedConditions.presenceOfElementLocated(uploadCertificateButton));
+		driver.findElement(uploadCertificateButton).getText();
+}
 
 	
 	public void clickPopupAlert(){
 	   Alert alert = driver.switchTo().alert();
 	   alert.accept();
 }
+	
+	 
 }

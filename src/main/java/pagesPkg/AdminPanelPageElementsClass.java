@@ -34,7 +34,10 @@ public class AdminPanelPageElementsClass {
 	private	By logoutLink= By.xpath("//a[@title='Logout']");
 
 	private	By yesLogoutButton= By.xpath("//button[contains(text(), 'Yes')]");
+	
 
+	
+	private By recognitionTile = By.xpath("//a[@href='awardconfiguration']");
 
 
 
@@ -83,9 +86,6 @@ public class AdminPanelPageElementsClass {
 		js.executeScript("arguments[0].click();", eleLogoutLink);
 	}
 
-	public void clickYesLogoutButton() {
-		driver.findElement(yesLogoutButton).click();
-	}
 
 	public void moveToAdminPanel() throws InterruptedException{	
 
@@ -102,6 +102,15 @@ public class AdminPanelPageElementsClass {
 		ArrayList<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
 
 		driver.switchTo().window(windowHandles.get(0));
+	}
+	
+	/*
+	 * public void clickYesLogoutButton() {
+	 * driver.findElement(yesLogoutButton).click(); }
+	 */
+	 public PGrewardAdditionClass clickYesLogoutButton() {
+	        driver.findElement(yesLogoutButton).click();
+	        return new PGrewardAdditionClass(driver);
 	}
 }
 
