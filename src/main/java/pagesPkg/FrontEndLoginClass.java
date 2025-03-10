@@ -39,8 +39,8 @@ public class FrontEndLoginClass {
 	
 		wait.until(ExpectedConditions.presenceOfElementLocated(loginButton));
 		
-		driver.findElement(usernameField).sendKeys("jsatish@workzia.com");
-		driver.findElement(passwordField).sendKeys("pass@12345");
+		driver.findElement(usernameField).sendKeys("toshu@yopmail.com");
+		driver.findElement(passwordField).sendKeys("pass@1234");
 
 		driver.findElement(loginButton).click();
 
